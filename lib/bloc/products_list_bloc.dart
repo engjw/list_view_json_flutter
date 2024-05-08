@@ -15,6 +15,7 @@ class ProductsListBloc extends Bloc<ProductsListEvent, ProductsListState> {
 
   Future<void> _onLoadProductsList(
       LoadProductsList event, Emitter<ProductsListState> emit) async {
+    emit(ProductsListLoading());
     await ProductsListService().getProductsList().then((value) => {
           emit(
             ProductsListLoaded(value!),
