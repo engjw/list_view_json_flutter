@@ -1,4 +1,4 @@
-package com.example.listview_json_parse_demo
+package com.jw.listview_json_parse
 
 import io.flutter.embedding.android.FlutterActivity
 
