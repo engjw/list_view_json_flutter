@@ -11,15 +11,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-        title: 'Flutter Interview Test',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: ProductListScreen(),
-        routes: {
-          ProductListScreen.routeName: (context) => ProductListScreen(),
-          ProductDetailScreen.routeName: (context) => ProductDetailScreen()
-        },      
+      title: 'Flutter Interview Test',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: ProductListScreen(),
+      routes: {
+        ProductListScreen.routeName: (context) => ProductListScreen(),
+        ProductDetailScreen.routeName: (context) => ProductDetailScreen()
+      },
     );
   }
 }

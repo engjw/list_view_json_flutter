@@ -1,5 +1,20 @@
-class Product {
+class ProducsListResponseModel {
+  ProducsListResponseModel({
+    required this.items,
+  });
 
+  final List<Product> items;
+
+  factory ProducsListResponseModel.fromJson(Map<String, dynamic> json) {
+    return ProducsListResponseModel(
+      items: json["items"] == null
+          ? []
+          : List<Product>.from(json["items"]!.map((x) => Product.fromJson(x))),
+    );
+  }
+}
+
+class Product {
   String id;
   String name;
   String description;
@@ -8,7 +23,8 @@ class Product {
   String category;
   String shortdes;
 
-  Product({this.id = "",
+  Product(
+      {this.id = "",
       this.category = "",
       this.name = "",
       this.description = "",
@@ -18,13 +34,13 @@ class Product {
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-        id: json['id'],
-        category: json['category'],
-        name: json['name'],
-        description: json['description'],
-        image: json['image'],
-        price: json['price'],
-        shortdes: json['shortdes']
+      id: json['id'] ?? "",
+      category: json['category'] ?? "",
+      name: json['name'] ?? "",
+      description: json['description'] ?? "",
+      image: json['image'] ?? "",
+      price: json['price'] ?? 0,
+      shortdes: json['shortdes'] ?? "",
     );
   }
 
@@ -39,5 +55,4 @@ class Product {
     data['shortdes'] = this.shortdes;
     return data;
   }
-
 }
